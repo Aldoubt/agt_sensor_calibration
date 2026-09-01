@@ -3,7 +3,7 @@
   <name>agt_extrinsic_calibration</name>
   <version>0.1.0</version>
   <description>Offline and online multi sensor extrinsic calibration tools for AGT mobile robots.</description>
-  <maintainer email="">Aldoubt</maintainer>
+  <maintainer email="maintainers@aldoubt.example">Aldoubt</maintainer>
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -14,7 +14,11 @@
   <depend>sensor_msgs</depend>
   <depend>tf2</depend>
   <depend>tf2_ros</depend>
-  <depend>Eigen3</depend>
+  <depend>eigen</depend>
+  <depend>libceres-dev</depend>
+
+  <test_depend>ament_cmake_gtest</test_depend>
+  <test_depend>ament_index_cpp</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
