@@ -1,0 +1,23 @@
+robot:
+  base_frame: base_link
+
+sensors:
+  lidar:
+    frame: mid360_link
+    topic: /livox/lidar
+
+  imu:
+    frame: imu_link
+    topic: /livox/imu
+
+  wheel:
+    frame: base_link
+    topic: /wheel/odom
+
+  gps:
+    frame: gps_link
+    topic: /gps/fix
+
+calibration:
+  target: lidar_to_base
+  optimizer: ceres
