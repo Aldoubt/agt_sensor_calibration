@@ -1,0 +1,31 @@
+# Initial extrinsic prior for calibration
+# Transform direction:
+# parent_frame -> child_frame
+# Example: base_link -> mid360_link
+
+parent_frame: base_link
+child_frame: mid360_link
+
+translation:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+
+rotation:
+  qx: 0.0
+  qy: 0.0
+  qz: 0.0
+  qw: 1.0
+
+# Prior uncertainty used by optimization factor
+# Smaller values mean stronger constraint
+sigma:
+  translation_m: 0.05
+  rotation_deg: 5.0
+
+# Notes:
+# - This is not the optimized result.
+# - It should come from CAD measurement, URDF/tf_static,
+#   or manual measurement of sensor mounting.
+# - Pure rosbag motion data cannot directly recover absolute
+#   base_link -> mid360_link translation without an initial frame relation.
