@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_minimum(VERSION 3.8)
 project(agt_extrinsic_calibration)
 
 find_package(ament_cmake REQUIRED)
@@ -10,15 +10,17 @@ find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(Ceres REQUIRED)
+find_package(yaml-cpp REQUIRED)
 
 include_directories(include)
 
 add_library(agt_calibration_core
   src/rosbag_reader.cpp
   src/trajectory.cpp
-  src/optimizer.cpp)
+  src/optimizer.cpp
+  src/prior_loader.cpp)
 ament_target_dependencies(agt_calibration_core rclcpp rosbag2_cpp nav_msgs)
-target_link_libraries(agt_calibration_core Eigen3::Eigen Ceres::ceres)
+target_link_libraries(agt_calibration_core Eigen3::Eigen Ceres::ceres yaml-cpp)
 target_compile_features(agt_calibration_core PUBLIC cxx_std_17)
 
 add_executable(calibrate_bag src/calibrate_bag.cpp)
