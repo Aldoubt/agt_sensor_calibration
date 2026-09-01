@@ -1,0 +1,26 @@
+# Existing Benchmark-BAG-260725 profile
+# Used for offline calibration replay
+
+bag_name: Benchmark-BAG-260725
+
+inputs:
+  lidar:
+    topic: /agt/sensors/lidar/custom
+    type: livox_ros_driver2/msg/CustomMsg
+  imu:
+    topic: /agt/sensors/imu/data
+    type: sensor_msgs/msg/Imu
+  lidar_odom:
+    topic: /agt/mapping/odometry
+    type: nav_msgs/msg/Odometry
+  wheel_odom:
+    topic: /agt/chassis/odometry
+    type: nav_msgs/msg/Odometry
+
+frames:
+  base: base_link
+  lidar: mid360_link
+  imu: imu_link
+
+output:
+  calibration_yaml: calibration_result.yaml
