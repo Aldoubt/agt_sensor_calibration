@@ -1,4 +1,4 @@
-cmake_minimum_minimum(VERSION 3.8)
+cmake_minimum_required(VERSION 3.8)
 project(agt_extrinsic_calibration)
 
 find_package(ament_cmake REQUIRED)
