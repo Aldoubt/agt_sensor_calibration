@@ -1,0 +1,30 @@
+# Benchmark-BAG-260725 calibration experiment
+
+bag:
+  name: Benchmark-BAG-260725
+
+frames:
+  base: base_link
+  lidar: mid360_link
+
+prior:
+  enabled: true
+  file: extrinsic_prior.yaml
+
+sources:
+  wheel_odom:
+    topic: /agt/chassis/odometry
+    type: nav_msgs/msg/Odometry
+
+  lidar_odom:
+    topic: /agt/mapping/odometry
+    type: nav_msgs/msg/Odometry
+
+  imu:
+    topic: /agt/sensors/imu/data
+    type: sensor_msgs/msg/Imu
+
+optimization:
+  max_translation_m: 0.5
+  max_rotation_deg: 30.0
+  robust_loss: huber
