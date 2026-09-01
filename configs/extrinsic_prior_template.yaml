@@ -1,0 +1,19 @@
+# Initial extrinsic guess
+# Transform direction: parent_frame -> child_frame
+parent_frame: base_link
+child_frame: mid360_link
+
+translation:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+
+rotation_quaternion:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  w: 1.0
+
+# Optimization confidence
+translation_sigma: 0.05
+rotation_sigma_deg: 5.0
